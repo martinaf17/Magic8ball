@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Magic8 {
 
+    //Shell method welcomes user and scans their first question
     public void Shell(){
         String yesNo, text;
         Scanner scan = new Scanner(System.in);
@@ -20,23 +21,23 @@ public class Magic8 {
         System.out.println("");
         System.out.println("User, are you ready to know your future? \nType Yes or No.");
         yesNo = scan.nextLine();
+        
+        //Checks answer (yes, no, illegal)
         if (yesNo.equalsIgnoreCase("no")){
             System.out.println("Come back when you are.");
-            //firstTime=true;
 
         } else if(yesNo.equalsIgnoreCase("yes")) {
             System.out.println("Okay, ask me something!");
             text = scan.nextLine();
-            //firstTime=false;
             generateFortune();
 
         } else {
             System.out.println("Yes or no answers only!");
-            //firstTime=true;
             Shell();
         }
     }
 
+    // Shell_2 method scans further questions
     public void Shell_2(){
         String yesNo, text;
         Scanner scan = new Scanner(System.in);
@@ -45,6 +46,8 @@ public class Magic8 {
         System.out.println("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
         System.out.println("Would you like to know something more?");
         yesNo = scan.nextLine();
+        
+        //Checks answer (yes, no, illegal)
         if (yesNo.equalsIgnoreCase("no")) {
             System.out.println("Farewell dear user.");
 
@@ -57,11 +60,11 @@ public class Magic8 {
             System.out.println("Yes or no answers only!");
         }
     }
-
+    
+    // generateFortune method generates random number and outputs fortune
     public void generateFortune(){
         int min = 1;
         int max = 20;
-
         int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
 
         switch (random_int){
